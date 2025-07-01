@@ -24,12 +24,12 @@ createSlice defines:
 -Provider wraps the React app to pass the store globally.
 
 Components use:
--useDispatch() to send actions
--useSelector() to read current state
+-`useDispatch()` to send actions
+-`useSelector()` to read current state
 
 ---
 
-### 🧪 Example Slice Code
+## 🧪 Example Slice Code
 
 const counterSlice = createSlice({
   name: 'counter',
@@ -42,7 +42,7 @@ const counterSlice = createSlice({
 
 ---
 
-### 📚 Useful Redux Concepts to Remember
+## 📚 Useful Redux Concepts to Remember
 -Store: The centralized state container
 -Slice: Modular piece of state logic (state + reducers + actions)
 -Reducer: Pure function to update state based on actions
@@ -51,7 +51,7 @@ const counterSlice = createSlice({
 
 ---
 
-### 📦 Built With
+## 📦 Built With
 -React
 -Redux Toolkit
 -Create React App 
