@@ -1,70 +1,57 @@
-# Getting Started with Create React App
+# 🧠⚛️ Redux Counter App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A simple React + Redux Toolkit counter application built as a quick reference for revising Redux concepts.
 
-## Available Scripts
+## 📌 Features
 
-In the project directory, you can run:
+- Global state management with Redux Toolkit
+- `createSlice()` to define reducers and actions
+- Shared counter value across multiple components (Header and Footer)
+- Action dispatch using `useDispatch()`
+- State access using `useSelector()`
+- Clean component structure with clear separation of concerns
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 🔄 Redux Flow Summary
+Here's a quick recap of how Redux works in this app:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+createSlice defines:
+-Initial state
+-Reducers (increment, decrement)
+-Auto-generated actions
+-The Redux store is configured with the slice reducer.
+-Provider wraps the React app to pass the store globally.
 
-### `npm test`
+Components use:
+-useDispatch() to send actions
+-useSelector() to read current state
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+### 🧪 Example Slice Code
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+const counterSlice = createSlice({
+  name: 'counter',
+  initialState: { value: 0 },
+  reducers: {
+    increment: (state) => { state.value += 1 },
+    decrement: (state) => { state.value -= 1 },
+  },
+});
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### 📚 Useful Redux Concepts to Remember
+-Store: The centralized state container
+-Slice: Modular piece of state logic (state + reducers + actions)
+-Reducer: Pure function to update state based on actions
+-Dispatch: Method to send an action to the store
+-Selector: Used to extract data from the store
 
-### `npm run eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### 📦 Built With
+-React
+-Redux Toolkit
+-Create React App 
