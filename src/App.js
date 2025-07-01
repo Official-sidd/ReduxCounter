@@ -1,23 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import { useDispatch, useSelector } from "react-redux";
+import { decrement, increment } from "./redux/slices/counterSlice";
+import Header from "./Header";
+import Footer from "./Footer";
 
 function App() {
+  const count = useSelector((state) => state.counter.value);
+  const dispatch = useDispatch();
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Header />
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-around",
+          alignItems: "center",
+          height: "80vh",
+        }}
+      >
+        <h1 style={{fontSize : "5rem"}}>Count: {count}</h1>
+        <div>
+          <button
+            onClick={() => dispatch(decrement())}
+            style={{ marginRight: "1rem" }}
+          >
+            ➖ Decrement
+          </button>
+          <button onClick={() => dispatch(increment())}>➕ Increment</button>
+        </div>
+      </div>
+      <Footer />
     </div>
   );
 }
